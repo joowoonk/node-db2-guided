@@ -1,8 +1,11 @@
-// const knex = require("knex");
-// const knexfile = require("../knexfile");
+const knex = require("knex");
+const knexfile = require("../knexfile.js");
 
+const environment = process.env.NODE_ENV || "development"; // undefined|production
+
+module.exports = knex(knexfile[environment]);
 // const furitsenv = process.env.FURITS_ENV || "fruits"; //undefined|production
-// //if || it's iternery either or this.
+//if || it's iternery either or this.
 
 // const veggiesenv = process.env.VEGGIES_ENV || "veggies";
 
