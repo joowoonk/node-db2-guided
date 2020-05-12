@@ -1,7 +1,7 @@
 // Update with your config settings.
 //npx knex init
 module.exports = {
-  fruits: {
+  development: {
     client: "sqlite3",
     connection: {
       filename: "./data/produce.db3",
@@ -9,13 +9,13 @@ module.exports = {
     useNullAsDefault: true,
   },
 
-  veggies: {
-    client: "sqlite3",
-    connection: {
-      filename: "./data/produce.db3",
-    },
-    useNullAsDefault: true,
-  },
+  // veggies: {
+  //   client: "sqlite3",
+  //   connection: {
+  //     filename: "./data/produce.db3",
+  //   },
+  //   useNullAsDefault: true,
+  // },
 
   // staging/testing server
   staging: {

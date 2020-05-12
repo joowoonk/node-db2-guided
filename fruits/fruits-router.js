@@ -1,6 +1,20 @@
 const express = require("express");
+const knex = require("knex");
+const knexfile = require("../knexfile");
 
-const db = require("../data/dbConnection").fruits;
+const environment = process.env.NODE_ENV || "development"; //undefined|production
+//if || it's iternery either or this.
+
+// const dbConfig = {
+//   client: "sqlite3", // driver
+//   connection: {
+//     filename: "./data/produce.db3", //could be an obj or string.
+//   },
+//   useNullAsDefault: true, // for SQLite only
+// };
+const dbConfig = knexfile[environment]; //getting it from knexfile.js
+
+const db = knex(dbConfig);
 
 const router = express.Router();
 
